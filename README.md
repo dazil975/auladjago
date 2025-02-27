@@ -31,10 +31,11 @@ Descrição: Processo para criação de um projeto de controle de estoque conten
 - Faz as migrações do models
 > python manage.py makemigrations
 - Aplica as migrações no banco de dados
-> python manage.pt migrate
+> python manage.py migrate
 
 10. Criação do Super Usuário
 > python manage.py createsuperuser
 
 11. startar o servidor de desenvolvimento
 > python manage.py runserver
+
