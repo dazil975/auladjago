@@ -30,9 +30,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-sys.path.append(
-    os.path.join(BASE_DIR, 'apps')
-)
+# sys.path.append(
+#     os.path.join(BASE_DIR, 'apps')
+# )
 
 # Application definition
 
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'produtos',
 ]
 
 MIDDLEWARE = [
@@ -105,10 +106,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 # Meus Apps
-INSTALLED_APPS +=[
-    'produtos',
-    'apps',
-]
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
