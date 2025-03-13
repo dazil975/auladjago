@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Categoria(models.Model):
     nome =  models.CharField(verbose_name='Categoria do Produto', blank=False, null=False, max_length=200)
@@ -31,6 +32,11 @@ class Produto(models.Model):
     quantidadeEstoque =models.PositiveIntegerField(verbose_name='Quantidade em Estoque', default=0)
     categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT)
     fornecedor = models.ForeignKey(Fornecedor, on_delete=models.PROTECT)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    image = models.ImageField(null=True, blank=True, default='images/placeholder.png')
+    marca = models.CharField(max_length=200, null=True, blank=True)
+    avaliacao = models.DecimalField(max_digits=10,decimal_places=2, null=True, blank=True)
+    criadoEm = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = 'Produto'
